@@ -5,7 +5,10 @@ package pascractherbasic.dallsoft.com.com;
  */
 /**
  * Created by jkwest on 11/21/2014.
- */ import android.content.Context;
+ */
+
+import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +22,13 @@ import pascractherbasic.dallsoft.com.pascratcherbasic.R;
 public class TicketItemAdapter extends ArrayAdapter<TicketItem> {
 
     private Context context;
+
+    private String prizeA;
+    private String prizeB;
+    private String priceC;
+    private String valueA;
+    private String valueB;
+    private String valueC;
 
 
     public TicketItemAdapter(Context context, int textViewResourceId,
@@ -51,6 +61,7 @@ public class TicketItemAdapter extends ArrayAdapter<TicketItem> {
 
             gameNameView.setText(item.getTitle());
             prizeInfoView.setText((item.getPrizeInfo()));
+            Log.d("descripOut", item.getPrizeInfo());
 
 
 
@@ -59,6 +70,13 @@ public class TicketItemAdapter extends ArrayAdapter<TicketItem> {
 
 
         return view;
+    }
+
+    public String  prizeFormatter(String prizeInfoText){
+
+
+        return "";
+
     }
 }
 
