@@ -91,12 +91,36 @@ public class MainActivity extends Activity {
                     } else if (currentTicketItem != null) {
                         if (name.equalsIgnoreCase("link")) {
                             currentTicketItem.setLink(parser.nextText());
-                        } else if (name.equalsIgnoreCase("prizesLeft")){
+                        }
+                        else if (name.equalsIgnoreCase("prizesLeft")) {
 
-                            currentTicketItem.setPrizeInfo(parser.nextText() + "  prizes at ");
+                            // currentTicketItem.setPrizeInfo(parser.nextText() + "  prizes at ");
+                            currentTicketItem.setPrizeInfo(parser.nextText());
+                        }
+                        else if (name.equalsIgnoreCase("prizesLeftA")){
+                            currentTicketItem.setPrizeA(parser.nextText());
 
+                            }
+                        else if (name.equalsIgnoreCase("prizesLeftB")){
+                            currentTicketItem.setPrizeB(parser.nextText());
+                        }
+                        else if (name.equalsIgnoreCase("prizesLeftC")){
+                            currentTicketItem.setPrizeC(parser.nextText());
+                        }
+                        else if (name.equalsIgnoreCase("prizeValueA")){
+                            currentTicketItem.setValueA(parser.nextText());
+                        }
+                        else if (name.equalsIgnoreCase("prizeValueB")){
+                            currentTicketItem.setValueB(parser.nextText());
 
                         }
+                        else if (name.equalsIgnoreCase("prizeValueC")){
+                            currentTicketItem.setValueC(parser.nextText());
+
+                        }
+
+
+
                         else if (name.equalsIgnoreCase("cost")) {
                             currentTicketItem.setCost(parser.nextText());
                         }

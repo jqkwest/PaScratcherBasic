@@ -25,6 +25,65 @@ public class TicketItem implements Comparable
     private String prizeInfo = "";
     private String title;
 
+    private String prizeA;
+    private String prizeB;
+    private String prizeC;
+    private String valueA;
+    private String valueB;
+    private String valueC;
+
+
+    public String getPrizeA() {
+        return prizeA;
+    }
+
+    public void setPrizeA(String prizeA) {
+        this.prizeA = prizeA;
+    }
+
+    public String getPrizeB() {
+        return prizeB;
+    }
+
+    public void setPrizeB(String prizeB) {
+        this.prizeB = prizeB;
+    }
+
+    public String getPrizeC() {
+        return prizeC;
+    }
+
+    public void setPrizeC(String prizeC) {
+        this.prizeC = prizeC;
+    }
+
+    public String getValueA() {
+        return valueA;
+    }
+
+    public void setValueA(String valueA) {
+        this.valueA = valueA;
+    }
+
+    public String getValueB() {
+        return valueB;
+    }
+
+    public void setValueB(String valueB) {
+        this.valueB = valueB;
+    }
+
+    public String getValueC() {
+        return valueC;
+    }
+
+    public void setValueC(String valueC) {
+        this.valueC = valueC;
+    }
+
+
+
+
     public String getLink() {
         return link;
     }

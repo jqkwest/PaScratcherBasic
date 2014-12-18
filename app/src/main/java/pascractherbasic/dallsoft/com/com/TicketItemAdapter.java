@@ -23,12 +23,7 @@ public class TicketItemAdapter extends ArrayAdapter<TicketItem> {
 
     private Context context;
 
-    private String prizeA;
-    private String prizeB;
-    private String priceC;
-    private String valueA;
-    private String valueB;
-    private String valueC;
+
 
 
     public TicketItemAdapter(Context context, int textViewResourceId,
@@ -55,16 +50,33 @@ public class TicketItemAdapter extends ArrayAdapter<TicketItem> {
         if (item != null) {
             // our layout has two TextView elements
             TextView gameNameView = (TextView) view.findViewById(R.id.gameNameText);
-            TextView prizeInfoView = (TextView) view
-                    .findViewById(R.id.prizeInfoText);
+//            TextView prizeInfoView = (TextView) view.findViewById(R.id.prizeInfoText);
+            TextView prizeATV = (TextView) view.findViewById(R.id.prizeATV);
+            TextView prizeBTV = (TextView) view.findViewById(R.id.prizeBTV);
+            TextView prizeCTV = (TextView) view.findViewById(R.id.prizeCTV);
+            TextView valueATV = (TextView) view.findViewById(R.id.valueATV);
+            TextView valueBTV = (TextView) view.findViewById(R.id.valueBTV);
+            TextView valueCTV = (TextView) view.findViewById(R.id.valueCTV);
+
+
 
 
             gameNameView.setText(item.getTitle());
-            prizeInfoView.setText((item.getPrizeInfo()));
-            Log.d("descripOut", item.getPrizeInfo());
+//            prizeInfoView.setText((item.getPrizeInfo()));
+            prizeATV.setText((item.getPrizeA()));
+            prizeBTV.setText((item.getPrizeB()));
+            prizeCTV.setText((item.getPrizeC()));
+            valueATV.setText(item.getValueA());
+            valueBTV.setText(item.getValueB());
+            valueCTV.setText(item.getValueC());
 
 
+            //   Log.d("descripOut", item.getPrizeInfo());
 
+              //  prizeFormatter(item.getPrizeInfo());
+             //   Log.d("descripOut",prizeA + " " + valueA );
+
+            Log.d("descripOut", item.getPrizeA() + " " + item.getValueA() + " " + item.getPrizeB() + " " + item.getValueB() + " "+  item.getPrizeC() + " " + item.getValueC());
 
         }
 
@@ -72,11 +84,6 @@ public class TicketItemAdapter extends ArrayAdapter<TicketItem> {
         return view;
     }
 
-    public String  prizeFormatter(String prizeInfoText){
 
-
-        return "";
-
-    }
 }
 
