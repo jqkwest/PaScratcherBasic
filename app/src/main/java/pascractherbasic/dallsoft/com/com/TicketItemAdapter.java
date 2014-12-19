@@ -1,11 +1,6 @@
 package pascractherbasic.dallsoft.com.com;
 
-/**
- * Created by jkwest on 12/15/2014.
- */
-/**
- * Created by jkwest on 11/21/2014.
- */
+
 
 import android.content.Context;
 import android.util.Log;
@@ -34,8 +29,10 @@ public class TicketItemAdapter extends ArrayAdapter<TicketItem> {
 
     public View getView(int position, View convertView, ViewGroup parent) {
 
+
         View view = convertView;
         if (view == null) {
+
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.ticket_list_view

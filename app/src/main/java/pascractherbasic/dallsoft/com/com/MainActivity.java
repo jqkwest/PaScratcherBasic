@@ -47,6 +47,7 @@ public class MainActivity extends Activity {
 
         adapter = new TicketItemAdapter(this, android.R.layout.simple_list_item_1, ticketItemList);
         mainListView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
         //  String siteURL = "http://xmlhost.x10host.com/xmllottery.xml";
        // String x = "http://xmlhost.savethis.net/xmllotteryBASIC.xml";
         String siteURL = "http://xmlhost.savethis.net/xmllotteryBASIC.xml";
@@ -79,6 +80,13 @@ public class MainActivity extends Activity {
         boolean done = false;
 
         TicketItem currentTicketItem= new TicketItem();
+///////////////////////////////////////////////////////////////////////////////////// purposely slowing it down
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
         while (eventType != XmlPullParser.END_DOCUMENT && !done) {
             String name = null;
@@ -98,24 +106,24 @@ public class MainActivity extends Activity {
                             currentTicketItem.setPrizeInfo(parser.nextText());
                         }
                         else if (name.equalsIgnoreCase("prizesLeftA")){
-                            currentTicketItem.setPrizeA(parser.nextText());
+                            currentTicketItem.setPrizeA(parser.nextText().replaceAll("/n","").trim());
 
                             }
                         else if (name.equalsIgnoreCase("prizesLeftB")){
-                            currentTicketItem.setPrizeB(parser.nextText());
+                            currentTicketItem.setPrizeB(parser.nextText().replaceAll("/n","").trim());
                         }
                         else if (name.equalsIgnoreCase("prizesLeftC")){
-                            currentTicketItem.setPrizeC(parser.nextText());
+                            currentTicketItem.setPrizeC(parser.nextText().replaceAll("/n","").trim());
                         }
                         else if (name.equalsIgnoreCase("prizeValueA")){
-                            currentTicketItem.setValueA(parser.nextText());
+                            currentTicketItem.setValueA(parser.nextText().replaceAll("/n","").trim());
                         }
                         else if (name.equalsIgnoreCase("prizeValueB")){
-                            currentTicketItem.setValueB(parser.nextText());
+                            currentTicketItem.setValueB(parser.nextText().replaceAll("/n","").trim());
 
                         }
                         else if (name.equalsIgnoreCase("prizeValueC")){
-                            currentTicketItem.setValueC(parser.nextText());
+                            currentTicketItem.setValueC(parser.nextText().replaceAll("/n","").trim());
 
                         }
 
